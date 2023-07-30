@@ -1,0 +1,19 @@
+
+<div class="content">
+  <h2 class="section-title">SUBMISSION</h2>
+  
+  <% if current_user.present? %>
+
+    <% if !@my_entries_for_this_hackathon.empty? %>
+      <p>You have already enrolled for this hackathon! Thank you for supporting us!</p>
+    <% else %>
+      <%= render "form", entry: @entry %>
+    <% end %>
+
+  <% else %>
+    <p>You are not authorized to create new entry!</p>
+  <% end %>
+  <div class="enroll-container">
+    <%= link_to "Back to entries", entries_path, class: "enroll" %>
+  </div>
+</div>

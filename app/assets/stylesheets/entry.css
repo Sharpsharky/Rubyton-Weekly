@@ -1,0 +1,15 @@
+.centered-text-field {
+    display: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 400px;
+  }
+.text-field {
+    width: 400px;
+  }
+
+  .text-field-description {
+    width: 400px;
+    height: 90px;
+  }

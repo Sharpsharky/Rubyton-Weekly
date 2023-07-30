@@ -1,0 +1,27 @@
+</br>
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <span class="section-title">PREVIOUS HACKATHONS</span>
+    <div class="entries-wrapper">
+      <div class="entry">
+      <% @hackathons_all_previous.each do |hackathon| %>
+        <div class="team-title">
+          <div class="team">
+          </br>
+          <%= hackathon.start_date.strftime('%d-%m-%Y') %>
+          </div>
+            <div class="title">
+                </br>
+                <%= link_to hackathon_path(hackathon) do %>
+                  <%= hackathon.title %>
+                <% end%>
+            </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </body>
+</html>

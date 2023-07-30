@@ -1,0 +1,29 @@
+<div class="navbar">
+    <div class="left-section">
+      <%= link_to root_path do %>
+        <%= image_tag("rubyton_icon.png", class: "logo") %>
+      <% end %>
+    </div>
+    <div class="middle-section">
+        <div class="hackathon-button">
+          <%= link_to "PREVIOUS HACKATHONS", hackathons_path %>
+        </div>
+    </div>
+    <div class="right-section">
+
+        <%if current_user %>
+
+            <div class="hackathon-button">
+                <%= button_to "LOG OUT", destroy_user_session_path, method: :delete, class: "custom-link", type: :submit %>
+            </div>
+            
+        <%else%>
+
+            <div class="hackathon-button"><%= link_to "LOGIN", new_user_session_path, class: "custom-link" %>
+            </div>
+            <div class="hackathon-button"><%= link_to "SIGN UP", new_user_registration_path, class: "custom-link" %>
+            </div>
+
+        <%end%>
+    </div>
+</div>

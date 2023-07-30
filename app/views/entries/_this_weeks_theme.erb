@@ -1,0 +1,20 @@
+<% if current_hackathon.present? %>
+    <span class="week-theme">THIS WEEKS THEME</span>
+    <span class="week-theme-title"> <%= current_hackathon.title %></span>
+
+    <% if current_user.present? %>
+
+        <% if @my_entries_for_this_hackathon.empty? %>
+            <span class="enroll-container"><%= link_to "ENROLL!", new_entry_path, class: "enroll" %></span>
+        <% else %>
+            <span class="enroll-container"><%= link_to "YOU HAVE ALREADY ENROLLED! CONGRATULATIONS!", entry_path(@my_entries_for_this_hackathon.first), class: "enroll" %></span> 
+        <% end %>
+
+    <% else %>
+        <span class="enroll-container"><%= link_to "ENROLL!", new_user_session_path, class: "enroll" %></span>
+    <% end %>
+    <span class="next-theme">NEXT HACKATHON START IN:</span>
+    <span class="time"> <%= time_remaining_in_words(current_hackathon.end_date)%></span>
+<% else %>
+    <span class="week-theme">NO HACKATHON AT THE MOMENT</span>
+<% end %>

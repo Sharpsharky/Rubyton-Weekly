@@ -1,0 +1,13 @@
+<h1>Editing entry</h1>
+<% if current_user.present? && @entry.user_id == current_user.id %>
+  <%= render "form", entry: @entry %>
+<% else %>
+  <p>You are not authorized to edit this entry.</p>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Show this entry", @entry %> |
+  <%= link_to "Back to entries", entries_path %>
+</div>

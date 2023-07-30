@@ -1,0 +1,38 @@
+<div class="entry-form-container">
+  <%= form_with(model: entry) do |form| %>
+    <div class="error-message">
+      <% if entry.errors.any? %>
+        <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+        <ul>
+          <% entry.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.label :title, class: "form-label" %>
+      <%= form.text_field :title, class: "form-input" %>
+    </div>
+
+    <div>
+      <%= form.label :team_name, class: "form-label" %>
+      <%= form.text_field :team_name, class: "form-input" %>
+    </div>
+
+    <div>
+      <%= form.label :description, class: "form-label" %>
+      <%= form.text_area :description, class: "form-input form-textarea" %>
+    </div>
+
+    <div>
+      <%= form.label :link, class: "form-label" %>
+      <%= form.text_field :link, class: "form-input" %>
+    </div>
+
+    <div>
+      <%= form.submit "Save", class: "form-submit" %>
+    </div>
+  <% end %>
+</div>

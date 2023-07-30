@@ -1,0 +1,2 @@
+class HackathonName < ApplicationRecord
+end

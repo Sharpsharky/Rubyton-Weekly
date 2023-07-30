@@ -1,0 +1,27 @@
+</br>
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <span class="section-title">ENTRIES FOR HACKATHON: </br><%= @hackathon.title %></span>
+    <div class="entries-wrapper">
+      <% @hackathon.entries.each do |entry| %>
+        <div class="entry">
+          <div class="team-title">
+            <div class="team">
+              </br>
+              <%= entry.team_name %>
+            </div>
+            <div class="title">
+              </br>
+              <%= link_to entry_path(entry) do %>
+                <%= entry.title %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </body>
+</html>

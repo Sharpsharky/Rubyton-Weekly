@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <%= render 'entries/this_weeks_theme' %>
+    <div class="entries-wrapper">
+      <div class="entry">CURRENT ENTRIES:
+
+
+      <% @entries.each do |entry| %>
+
+        <% next unless entry.hackathon_id == @current_hackathon.id %>
+
+        <div class="team-title">
+          <div class="team">
+          </br>
+            <%= entry.team_name %>
+          </div>
+            <div class="title">
+            </br>
+              <%= link_to entry_path(entry) do %>
+                <%= entry.title %>
+              <% end %>
+            </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- 
+<p style="color: green"><%= notice %></p>
+
+<h1>Entries</h1>
+
+<div id="entries">
+  <% @entries.each do |entry| %>
+    <%= render entry %>
+    <p>
+      <%= link_to "Show this entry", entry %>
+    </p>
+  <% end %>
+</div>
+-->
+
+

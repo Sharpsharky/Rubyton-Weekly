@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @entry %>
+
+<div>
+  <% if current_user.present? && @entry.user_id == current_user.id %>
+    <%= link_to "Edit this entry", edit_entry_path(@entry) %> |
+  <% end %>
+
+  <%= link_to "Back to entries", entries_path %>
+
+  <% if current_user.present? && @entry.user_id == current_user.id %>
+    <%= button_to "Destroy this entry", @entry, method: :delete %>
+  <% end %>
+</div>
